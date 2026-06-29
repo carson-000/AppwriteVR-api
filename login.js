@@ -3,6 +3,7 @@ import * as sdk from 'node-appwrite';
 const { Client, TablesDB, Permission, Role } = sdk;
 
 export default async ({ req, res, log, error }) => {
+  //make sure you set these env variables, or the function will crash.
   const client = new sdk.Client()
           .setEndpoint(process.env.ENDPOINT)
           .setProject(process.env.PROJECTID)
