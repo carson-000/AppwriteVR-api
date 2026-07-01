@@ -9,7 +9,7 @@ export default async ({ req, res, log, error }) => {
           .setProject(process.env.PROJECTID)
           .setKey(process.env.APIKEY)
   const users = new sdk.Users(client);
-  const body = req.body;
+  const body = JSON.parse(req.body);
   const userid = body.userid;
   const username = body.username;
   const db = new sdk.TablesDB(client);
